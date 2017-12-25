@@ -1,0 +1,19 @@
+.session-table{
+    margin-left: 25%;
+}
+
+@media only screen and (max-width: 768px){
+    .session-table{
+        text-align: center;
+        align-content: center;
+    }
+}
+
+.session-cell{
+    height: 50px;
+    line-height: 50px;
+    background-color: #f4f4f4;
+    color: black;
+    padding-left: 27px;
+    display: table;
+}

@@ -1,0 +1,21 @@
+.App {
+}
+
+.App-header {
+  background-color: #a80000;
+  height: 450px;
+  padding: 20px;
+  color: white;
+  overflow: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.App-title {
+  font-size: 3em;
+  text-align: left;
+}
+
+.App-intro {
+  font-size: large;
+}
