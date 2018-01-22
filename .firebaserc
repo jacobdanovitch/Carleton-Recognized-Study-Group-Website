@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "carletonrsg",
-    "carletonrsg": "carletonrsg"
+    "default": "carletoncs-study",
+    "carletoncs-study": "carletoncs-study"
   }
 }

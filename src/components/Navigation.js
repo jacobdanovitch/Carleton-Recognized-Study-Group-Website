@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Nav, Navbar, NavItem} from 'react-bootstrap'
+import {MenuItem, Nav, Navbar, NavItem} from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
+import Icon from 'react-icons-kit'
+import {github} from 'react-icons-kit/icomoon/github'
+import {facebook2 as facebook} from 'react-icons-kit/icomoon/facebook2'
 
 import SignOutButton from '../auth/SignOut';
 import * as routes from './Routes';
@@ -25,20 +28,22 @@ const NavigationItem = (props) =>
     </LinkContainer>
 
 const NavigationAuth = () =>
-    <Navbar>
+    <Navbar collapseOnSelect>
         <Navbar.Header>
             <Navbar.Brand>
-                <LinkContainer to={routes.HOME}><a>Home</a></LinkContainer>
+                <LinkContainer to={routes.HOME}><Navbar.Text pullLeft>Home</Navbar.Text></LinkContainer>
             </Navbar.Brand>
         </Navbar.Header>
-        <Nav>
-            <NavigationItem to={routes.LANDING}>Landing</NavigationItem>
-            <NavigationItem to={routes.ACCOUNT}>Account</NavigationItem>
-        </Nav>
         <Nav pullRight>
-            <NavItem>
+                <MenuItem href="https://github.com/jacobdanovitch/rsg-website">
+                    <Icon size={32} icon={github}/>
+                </MenuItem>
+                <MenuItem href="https://www.facebook.com/groups/1571999506153827/?ref=br_rs">
+                    <Icon size={32} icon={facebook}/>
+                </MenuItem>
+            <MenuItem>
                 <SignOutButton/>
-            </NavItem>
+            </MenuItem>
         </Nav>
     </Navbar>
 
@@ -47,7 +52,7 @@ const NavigationNonAuth = () =>
         <Nav>
             <Navbar.Header>
                 <Navbar.Brand>
-                    <NavigationItem to={routes.SIGN_IN}>Sign In</NavigationItem>
+                    <NavigationItem to={routes.SIGN_IN}><Navbar.Text>Sign In</Navbar.Text></NavigationItem>
                 </Navbar.Brand>
             </Navbar.Header>
         </Nav>

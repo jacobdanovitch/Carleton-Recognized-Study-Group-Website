@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Navigation from './components/Navigation';
-import LandingPage from './components/Home';
-import HomePage from './components/Home';
+import Home from './components/Home';
 import SignUpPage from './auth/SignUp';
 import SignInPage from './auth/SignIn';
 import PasswordForgetPage from './auth/PasswordForget';
-import AccountPage from './components/Account';
 
 import * as routes from './components/Routes';
 import withAuthentication from './auth/withAuthentication';
@@ -24,8 +22,8 @@ class App extends Component {
 
     componentDidMount() {
         firebase.auth.onAuthStateChanged(authUser => {
-            authUser
-                ? this.setState(() => ({ authUser }))
+            authUser ?
+                this.setState(() => ({ authUser }))
                 : this.setState(() => ({ authUser: null }));
         });
     }
@@ -36,12 +34,10 @@ class App extends Component {
                 <div>
                     <Navigation authUser={this.state.authUser}/>
 
-                    <Route exact path={routes.LANDING} component={() => <LandingPage/>}/>
+                    <Route exact path={routes.HOME} component={() => <Home/>}/>
                     <Route exact path={routes.SIGN_UP} component={() => <SignUpPage/>}/>
                     <Route exact path={routes.SIGN_IN} component={() => <SignInPage/>}/>
                     <Route exact path={routes.PASSWORD_FORGET} component={() => <PasswordForgetPage/>}/>
-                    <Route exact path={routes.HOME} component={() => <HomePage/>}/>
-                    <Route exact path={routes.ACCOUNT} component={() => <AccountPage/>}/>
                 </div>
             </Router>
         )

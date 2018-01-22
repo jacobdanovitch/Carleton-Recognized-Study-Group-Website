@@ -9,15 +9,22 @@ export class SessionTable extends Component {
             <div>
                 <h2>Schedule</h2>
                 <ListGroup style={{color:"black"}}>
-                    <ListGroupItem header="Week 1"
-                                   href="http://people.scs.carleton.ca/~lanthier/teaching/COMP1406/Notes/COMP1406_Ch1_ProgrammingInJava.pdf">(Ch1)
-                        Introduction to Java</ListGroupItem>
-                    <ListGroupItem header="Week 2"
-                                   href="http://people.scs.carleton.ca/~lanthier/teaching/COMP1406/Notes/COMP1406_Ch2_CreationAndStorageOfJavaObjects.pdf">(Ch2)
-                        Introduction to OOP</ListGroupItem>
-                    <ListGroupItem header="Week 3"
-                                   href="http://people.scs.carleton.ca/~lanthier/teaching/COMP1406/Notes/COMP1406_Ch4_ClassHierarchiesAndInheritance.pdf">(Ch4)
-                        Class Hierarchies and Inheritance</ListGroupItem>
+                    <ListGroupItem
+                        header="Week 1: January 22"
+                        href="/"
+                    >
+                        (Ch1:3) Preparation for test #1.
+                    </ListGroupItem>
+                    <ListGroupItem
+                        header="Week 2: January 29"
+                    >
+                        TBD
+                    </ListGroupItem>
+                    <ListGroupItem
+                        header="Week 3: February 5"
+                    >
+                        TBD
+                    </ListGroupItem>
                 </ListGroup>
             </div>
         );
