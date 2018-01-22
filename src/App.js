@@ -1,52 +1,51 @@
-import React, {Component} from 'react';
-import './App.css';
-import {Fabric} from 'office-ui-fabric-react/lib/Fabric';
-import {loadTheme} from 'office-ui-fabric-react/lib/Styling';
-import {SessionTable} from './SessionTable'
-import Questions from './FAQ'
+import React, { Component } from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
+import Navigation from './components/Navigation';
+import LandingPage from './components/Home';
+import HomePage from './components/Home';
+import SignUpPage from './auth/SignUp';
+import SignInPage from './auth/SignIn';
+import PasswordForgetPage from './auth/PasswordForget';
+import AccountPage from './components/Account';
+
+import * as routes from './components/Routes';
+import withAuthentication from './auth/withAuthentication';
+import { firebase } from './firebase'
 
 class App extends Component {
-    render() {
-        loadTheme({
-            palette: {
-                'themePrimary': '#a80000'
-            }
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            authUser: null,
+        };
+    }
+
+    componentDidMount() {
+        firebase.auth.onAuthStateChanged(authUser => {
+            authUser
+                ? this.setState(() => ({ authUser }))
+                : this.setState(() => ({ authUser: null }));
         });
+    }
 
+    render() {
         return (
-            <Fabric>
-                <div className="App ms-Grid">
-                    <header className="App-header">
-                        <h1 className="App-title ms-Grid-row">COMP1406 Recognized Study Group</h1>
-                        <hr/>
-                        <div>
-                            <p className="ms-Grid-col ms-sm12 ms-u-md4 ms-lg4" style={{marginTop: "2%"}}>
-                                Welcome to Jacob and Tim's recognized study group for COMP1406 at Carleton University.
-                                We're two volunteer first year students in Mark Lanthier's course.
-                                Here, you'll find information about when and where the group meets, what topics we'll be
-                                covering, and more.
+            <Router>
+                <div>
+                    <Navigation authUser={this.state.authUser}/>
 
-                                Join our facebook group to stay up to date: &nbsp;
-                                <a style={{color: "White", textDecoration: "Underline"}}
-                                   href="https://www.facebook.com/groups/1571999506153827/">
-                                    COMP 1406 Recognized Study Group
-                                </a>
-                            </p>
-                        </div>
-                        <div className="session-table ms-Grid-col ms-sm12 ms-u-md4 ms-lg8">
-                            <SessionTable/>
-                        </div>
-                    </header>
-                    <div>
-                        <h1>FAQ</h1>
-                        <hr/>
-                        <Questions/>
-                    </div>
+                    <Route exact path={routes.LANDING} component={() => <LandingPage/>}/>
+                    <Route exact path={routes.SIGN_UP} component={() => <SignUpPage/>}/>
+                    <Route exact path={routes.SIGN_IN} component={() => <SignInPage/>}/>
+                    <Route exact path={routes.PASSWORD_FORGET} component={() => <PasswordForgetPage/>}/>
+                    <Route exact path={routes.HOME} component={() => <HomePage/>}/>
+                    <Route exact path={routes.ACCOUNT} component={() => <AccountPage/>}/>
                 </div>
-            </Fabric>
-        );
+            </Router>
+        )
     }
 }
 
-export default App;
+export default withAuthentication(App);

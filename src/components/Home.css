@@ -1,0 +1,22 @@
+.App {
+}
+
+.App-header {
+    background-color: #a80000;
+    height: 100%;
+    padding: 20px;
+    color: white;
+}
+
+.App-title {
+    font-size: 3em;
+    text-align: left;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+.App form button {
+    margin: 3% 0 3% 0;
+}
