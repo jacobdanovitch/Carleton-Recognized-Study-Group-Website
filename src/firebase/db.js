@@ -29,15 +29,15 @@ export const checkCode = (currentSession, inputCode) => {
 };
 
 export const checkTime = (currentSession) => {
-    const startTime = '/14:30';
-    const currentStartDate = new Date(currentSession.date + startTime);
+    let submitDate = new Date();
+    let startTime = 12; // open at 12pm
+    let endTime = 19; // end at 7pm
 
-    const endTime = '/18:30';
-    const currentEndDate = new Date(currentSession.date + endTime);
+    let currentSessionDate = new Date(currentSession.date);
 
-    const submitDate = new Date();
-
-    return (currentStartDate.getTime() < submitDate.getTime() && submitDate.getTime() < currentEndDate.getTime())
+    return (submitDate.toLocaleDateString() === currentSessionDate.toLocaleDateString() &&
+        submitDate.getHours() > startTime &&
+        submitDate.getHours() < endTime);
 };
 
 export const checkValidSession = (currentSession, userSessions) => {
