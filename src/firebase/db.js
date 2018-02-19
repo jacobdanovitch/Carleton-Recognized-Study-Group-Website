@@ -44,7 +44,8 @@ export const checkValidSession = (currentSession, userSessions) => {
     var duplicate = false;
     for (var i in userSessions) {
         if (userSessions.hasOwnProperty(i)) {
-            duplicate = ( userSessions[i].sessionAttended === currentSession.date )
+            duplicate = ( userSessions[i].sessionAttended === currentSession.date );
+            break;
         }
     }
     return !(duplicate);

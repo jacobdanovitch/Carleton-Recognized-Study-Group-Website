@@ -5,6 +5,11 @@ import { withRouter } from 'react-router-dom';
 import { firebase } from '../firebase';
 import * as routes from '../components/Routes';
 
+import './SignInBody'
+import SignInBody from "./SignInBody";
+
+import {Fabric} from 'office-ui-fabric-react/lib/Fabric';
+
 const withAuthorization = (authCondition) => (Component) => {
     class WithAuthorization extends Component {
         componentDidMount() {
@@ -16,7 +21,11 @@ const withAuthorization = (authCondition) => (Component) => {
         }
 
         render() {
-            return this.context.authUser ? <Component /> : null;
+            return(
+                <Fabric>
+                    {this.context.authUser ? <Component /> : <SignInBody/>}
+                </Fabric>
+        )
         }
     }
 

@@ -78,7 +78,7 @@ class Home extends Component {
             }
         });
         return (
-            <Fabric>
+
                 <div className="App ms-Grid">
                     <header className="App-header">
                         <h1 className="App-title ms-Grid-row">COMP1406 Recognized Study Group</h1>
@@ -120,7 +120,7 @@ class Home extends Component {
                         <Questions/>
                     </div>
                 </div>
-            </Fabric>
+
         );
     }
 }

@@ -35,7 +35,7 @@ const NavigationAuth = () =>
             </Navbar.Brand>
         </Navbar.Header>
         <Nav pullRight>
-                <MenuItem href="https://github.com/jacobdanovitch/rsg-website">
+                <MenuItem href="https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website">
                     <Icon size={32} icon={github}/>
                 </MenuItem>
                 <MenuItem href="https://www.facebook.com/groups/1571999506153827/?ref=br_rs">
