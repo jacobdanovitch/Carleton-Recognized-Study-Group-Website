@@ -9,3 +9,9 @@ This site is intended to be extremely minimalistic. At some point I will attempt
 * **React**
 * **Node.js**
 * **Firebase**
+
+## Future Plans
+
+* ~~Sessions locking early~~ Fixed (hopefully?)
+* Adding session notes
+* UI upgrades
