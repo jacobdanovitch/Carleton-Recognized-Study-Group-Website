@@ -1,30 +1,53 @@
 import React, {Component} from 'react';
 import 'office-ui-fabric-react/lib/components/List/examples/List.Scrolling.Example.scss'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
+import {db} from '../firebase'
+//var dateFormat = require('date.format');
+import dateFormat from 'dateformat'
+
+class Session extends Component {
+    render(){
+        return(
+            <ListGroupItem
+                header={this.props.header}
+                href={this.props.link}
+            >
+                {this.props.description}
+            </ListGroupItem>
+        )
+    }
+}
 
 export class SessionTable extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            data: null
+        }
+    }
+
+    componentDidMount = () => {
+        db.getSessions().then(snapshot =>
+            this.setState(() => ( {data: snapshot.val()} ))
+        );
+    };
 
     render() {
+        if (!this.state.data) return null;
         return (
             <div>
                 <h2>Schedule</h2>
-                <ListGroup style={{color:"black"}}>
-                    <ListGroupItem
-                        header="Week 1: January 22"
-                        href="/"
-                    >
-                        (Ch1:3) Preparation for test #1.
-                    </ListGroupItem>
-                    <ListGroupItem
-                        header="Week 2: January 29"
-                    >
-                        TBD
-                    </ListGroupItem>
-                    <ListGroupItem
-                        header="Week 3: February 5"
-                    >
-                        TBD
-                    </ListGroupItem>
+                <ListGroup style={{color: "black"}}>
+                    {this.state.data.map(session => {
+                        console.log(session);
+                        return(
+                            <Session
+                                header={dateFormat(new Date(session.date), "mmmm dS")}
+                                description={session.Description}
+                                link={session.link}
+                            />
+                        )
+                    })}
                 </ListGroup>
             </div>
         );

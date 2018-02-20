@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "date.format": "^1.1.2",
+    "dateformat": "^3.0.3",
     "firebase": "^4.9.0",
     "office-ui-fabric-react": "^5.35.1",
     "prop-types": "^15.6.0",
