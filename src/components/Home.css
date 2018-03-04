@@ -1,11 +1,11 @@
-.App .jumbotron {
+.App > .jumbotron {
     position: absolute;
     background: #333 center center;
     z-index: 1;
     color: white;
 }
 
-.App .jumbotron:before {
+.App > .jumbotron:before {
     background: url('../assets/jumbotron_background.jpg') center center no-repeat;
     background-size: cover;
     content: "";
