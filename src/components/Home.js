@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import {Fabric} from 'office-ui-fabric-react/lib/Fabric';
 import {loadTheme} from 'office-ui-fabric-react/lib/Styling';
-import {Button, Form, FormControl} from 'react-bootstrap'
+import {Button, Form, FormControl, Jumbotron} from 'react-bootstrap'
 
 import {SessionTable} from './SessionTable'
 import Questions from './FAQ'
@@ -29,7 +28,7 @@ class Home extends Component {
         db.getUserSessions(userID).then(snapshot =>
             this.setState(() => ({sessions: snapshot.val()}),
                 function () {
-                    this.setState({numSessions : _.size(this.state.sessions)})
+                    this.setState({numSessions: _.size(this.state.sessions)})
                 }
             )
         );
@@ -47,6 +46,7 @@ class Home extends Component {
         })
 
     };
+
     componentDidMount = () => {
         this.setActiveUser();
     };
@@ -77,49 +77,38 @@ class Home extends Component {
                 'themePrimary': '#a80000'
             }
         });
+
         return (
-
-                <div className="App ms-Grid">
-                    <header className="App-header">
-                        <h1 className="App-title ms-Grid-row">COMP1406 Recognized Study Group</h1>
-                        <hr/>
-                        <div className="ms-Grid-col ms-sm12 ms-u-md4 ms-lg4" style={{marginTop: "2%"}}>
-                            <p>
-                                Welcome to Jacob and Tim's recognized study group for COMP1406 at Carleton University.
-                                We're two volunteer first year students in Mark Lanthier's course.
-                                Here, you'll find information about when and where the group meets, what topics we'll be
-                                covering, and more.
-
-                                Join our facebook group to stay up to date: &nbsp;
-                                <a
-                                    style={{color: "White", textDecoration: "Underline"}}
-                                    href="https://www.facebook.com/groups/1571999506153827/">
-                                    COMP 1406 Recognized Study Group
-                                </a>
-                            </p>
-                        </div>
-                        <div className="session-table ms-Grid-col ms-sm12 ms-u-md4 ms-lg8">
-                            <SessionTable/>
-                        </div>
-                        <div style={{display: "table", margin: "0 auto", textAlign: "center"}}>
-                            <h3>Number of sessions attended: {!!this.state.sessions && this.state.numSessions || 0}</h3>
-                            <Form onSubmit={this.handleSubmit}>
-                                <Button type="submit">Attend a session</Button>
-                                <FormControl
-                                    value={this.state.code}
-                                    onChange={event => this.setState({code: event.target.value})}
-                                    type="text"
-                                    placeholder="Session Code"
-                                />
-                            </Form>
-                        </div>
-                    </header>
+            <div className="App ms-Grid">
+                <Jumbotron>
+                    <h1 className="App-title ms-Grid-row">COMP1406 Recognized Study Group</h1>
+                    <hr/>
                     <div>
-                        <h1>FAQ</h1>
-                        <hr/>
-                        <Questions/>
+                        <p>
+                            Welcome to Jacob and Tim's recognized study group for COMP1406 at Carleton University.
+                            Here, you'll find information about when and where the group meets, what topics we'll be
+                            covering, and more. Join the facebook group in the navigation to stay up to date.
+                        </p>
                     </div>
+                    <h3>Number of sessions attended: {!!this.state.sessions && this.state.numSessions || 0}</h3>
+                    <Form onSubmit={this.handleSubmit}>
+                        <Button type="submit">Attend a session</Button>
+                        <br/>
+                        <FormControl
+                            value={this.state.code}
+                            onChange={event => this.setState({code: event.target.value})}
+                            type="text"
+                            placeholder="Session Code..."
+                        />
+                    </Form>
+                </Jumbotron>
+                <SessionTable/>
+                <div>
+                    <h1>FAQ</h1>
+                    <hr/>
+                    <Questions/>
                 </div>
+            </div>
 
         );
     }

@@ -4,6 +4,7 @@ import {ListGroup, ListGroupItem} from 'react-bootstrap'
 import {db} from '../firebase'
 //var dateFormat = require('date.format');
 import dateFormat from 'dateformat'
+import './SessionList.css'
 
 class Session extends Component {
     render(){
@@ -35,8 +36,8 @@ export class SessionTable extends Component {
     render() {
         if (!this.state.data) return null;
         return (
-            <div>
-                <h2>Schedule</h2>
+            <div className="sessions">
+                <h2>Attended Sessions</h2>
                 <ListGroup style={{color: "black"}}>
                     {this.state.data.map(session => {
                         console.log(session);

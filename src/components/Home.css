@@ -1,22 +1,36 @@
-.App {
-}
-
-.App-header {
-    background-color: #a80000;
-    height: 100%;
-    padding: 20px;
+.App .jumbotron {
+    position: absolute;
+    background: #333 center center;
+    z-index: 1;
     color: white;
 }
 
-.App-title {
-    font-size: 3em;
-    text-align: left;
+.App .jumbotron:before {
+    background: url('../assets/jumbotron_background.jpg') center center no-repeat;
+    background-size: cover;
+    content: "";
+    z-index: -1;
+    filter: opacity(45%) brightness(55%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
-.App-intro {
-    font-size: large;
+.jumbotron, .jumbotron h1{
+    text-align: center;
 }
 
+.App form input {
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+}
+
+/*
+../assets/jumbotron_background.jpg
+ */
 .App form button {
-    margin: 3% 0 3% 0;
+    margin: 1.5% 0 0.5% 0;
 }

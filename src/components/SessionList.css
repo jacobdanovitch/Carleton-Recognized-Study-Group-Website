@@ -1,3 +1,13 @@
+.sessions{
+    position: relative;
+    margin-top: 27%;
+}
+
+@media only screen and (max-width : 768px) {
+    .sessions{
+        margin-top: 140%; /* i hate myself */
+    }
+}
 .session-table{
     margin-left: 25%;
 }
