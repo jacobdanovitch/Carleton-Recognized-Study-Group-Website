@@ -36,8 +36,8 @@ export const checkTime = (currentSession) => {
     let currentSessionDate = new Date(currentSession.date);
 
     return (submitDate.toLocaleDateString() === currentSessionDate.toLocaleDateString() &&
-        submitDate.getHours() > startTime &&
-        submitDate.getHours() < endTime);
+        submitDate.getHours() >= startTime &&
+        submitDate.getHours() <= endTime);
 };
 
 export const checkValidSession = (currentSession, userSessions) => {

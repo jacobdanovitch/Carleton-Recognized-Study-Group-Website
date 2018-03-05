@@ -37,10 +37,9 @@ export class SessionTable extends Component {
         if (!this.state.data) return null;
         return (
             <div className="sessions">
-                <h2>Attended Sessions</h2>
+                <h2>Session Notes</h2>
                 <ListGroup style={{color: "black"}}>
                     {this.state.data.map(session => {
-                        console.log(session);
                         return(
                             <Session
                                 header={dateFormat(new Date(session.date), "mmmm dS")}

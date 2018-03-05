@@ -1,21 +1,26 @@
 .sessions{
     position: relative;
-    margin-top: 35%;
+}
+
+.session-table{
+    margin-left: 25%;
+}
+
+@media only screen and (min-width: 769px),  only screen and (max-width:1280px){
+    .sessions{
+        margin-top: 35%;
+    }
+}
+
+@media only screen and (min-width:1281px){
+    .sessions{
+        margin-top: 27%;
+    }
 }
 
 @media only screen and (max-width : 768px) {
     .sessions{
         margin-top: 140%; /* i hate myself */
-    }
-}
-.session-table{
-    margin-left: 25%;
-}
-
-@media only screen and (max-width: 768px){
-    .session-table{
-        text-align: center;
-        align-content: center;
     }
 }
 
