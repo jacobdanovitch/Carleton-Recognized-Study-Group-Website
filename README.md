@@ -13,5 +13,7 @@ This site is intended to be extremely minimalistic. At some point I will attempt
 ## Future Plans
 
 * ~~Sessions locking early~~ Fixed (hopefully?)
-* Adding session notes
-* UI upgrades
+* ~~Adding session notes~~ Fixed
+* UI upgrades - always in progress
+* Admin page
+* Integrating notes into site rather than external links
