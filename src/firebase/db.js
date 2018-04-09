@@ -42,36 +42,27 @@ export const checkTime = (currentSession) => {
 
 export const checkValidSession = (currentSession, userSessions) => {
     var duplicate = false;
+    console.log(userSessions);
     for (var i in userSessions) {
-        if (userSessions.hasOwnProperty(i)) {
-            duplicate = ( userSessions[i].sessionAttended === currentSession.date );
-            break;
+        if (userSessions.hasOwnProperty(i) && userSessions[i].sessionAttended === currentSession.date) {
+            console.log(false);
+            return false;
         }
     }
-    return !(duplicate);
+    return true;
 };
 
 export const validateSession = (currentSession, code, sessions) => {
-    const validCode = checkCode(currentSession, code);
-    const validTime = checkTime(currentSession);
-    const validSession = checkValidSession(currentSession, sessions);
-
-    let verified = (validCode && validTime && validSession);
-    if (verified) {
-        return verified
+    if(!checkCode(currentSession, code)) {
+        alert("Incorrect code");
+    }
+    else if(!checkTime(currentSession)) {
+        alert("This session is locked");
+    }
+    else if(!checkValidSession(currentSession, sessions)){
+        alert("You have already checked in for this session");
     }
     else {
-        if (!validCode) {
-            alert("Incorrect code")
-        }
-        else if (!validTime) {
-            alert("This session is locked")
-        }
-        else if (!validSession) {
-            alert("You have already checked in for this session")
-        }
-        else {
-            alert('Unknown error')
-        }
+        return true;
     }
 };
