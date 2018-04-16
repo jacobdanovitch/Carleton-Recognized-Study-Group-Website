@@ -59,15 +59,15 @@
 ## 3. Data Structures
 
 [**Notes**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Week_5_Data-Structures.ipynb)
-[**Code example**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)**
+[**Code example**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)
 
 ## 4. Recursion
 
-[**Code example**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)**
+[**Code example**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)
 
 ## 5. Exception handling
 
-[**Code example**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)**
+[**Code example**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)
 
 **Questions:**
 1.	Which is the correct error handling block? <br/>
