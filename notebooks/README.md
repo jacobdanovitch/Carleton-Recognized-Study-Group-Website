@@ -2,7 +2,7 @@
 
 ## Model-View Controller and User Interface Extensions
 
-**[Notes]**(https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Week_4_Action-Listeners-Event-Handling.ipynb)
+[**Notes**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Week_4_Action-Listeners-Event-Handling.ipynb)
 
 **Questions:**
 1.	Why do we use the model view controller architecture? <br/>
@@ -58,16 +58,16 @@
 
 ## 3. Data Structures
 
-**[Notes](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Week_5_Data-Structures.ipynb)**
-**[Code example](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)**
+[**Notes**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Week_5_Data-Structures.ipynb)
+[**Code example**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)**
 
 ## 4. Recursion
 
-**[Code example](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)**
+[**Code example**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)**
 
 ## 5. Exception handling
 
-**[Code example](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)**
+[**Code example**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)**
 
 **Questions:**
 1.	Which is the correct error handling block? <br/>
@@ -96,4 +96,4 @@
 
 ## 6. File I/O
 
-**[Code example]**(https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)
+[**Code example**](https://github.com/jacobdanovitch/Carleton-Recognized-Study-Group-Website/blob/master/notebooks/Exam%20Prep/Exam%20Prep.ipynb)
