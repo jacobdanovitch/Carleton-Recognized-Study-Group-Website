@@ -1,0 +1,21 @@
+GUIs
+1. c)
+2. c)
+3. b)
+4. c)
+5. c)
+6. d)
+7. c) -c is most correct even tho its still wrong
+	should be gridpane.add(button,col,row)
+8. c)
+9. c)
+10. d)
+
+Exception Handleing
+1. c)
+2. c)
+3. c)
+4. c) - c is the most correct altough its should be:
+	Public customExceptions extends Exception 
+	(no s on Exception)
+5. a)
